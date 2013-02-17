@@ -1,0 +1,18 @@
+{
+	"AppDescription": {
+		"en": "POMOfy where the Pomodoro Technique meets Spotify."
+	},
+	"AppIcon": {
+		"36x18": "img/pomofy-icon.png"
+	},
+	"AppName": {
+		"en": "POMOfy"
+	},
+	"BundleIdentifier": "pomofy",
+	"BundleType": "Application",
+	"BundleVersion": "0.1",
+	"RequiredInterface": 1,
+	"SupportedLanguages": [
+		"en"
+	]
+}

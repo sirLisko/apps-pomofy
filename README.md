@@ -1,4 +1,4 @@
 POMOfy
 ======
 
-POMOfy introduces the productivity of the Pomodoro Technique in Spotify
+POMOfy where the Pomodoro Technique meets Spotify.
