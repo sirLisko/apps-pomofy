@@ -37,7 +37,7 @@
 					clearInterval(tick);
 					player.playing = false;
 					playerButton.innerText = "Go!";
-					time = 1499;
+					mins = 24;
 				}
 				secs = 59;
 			}
