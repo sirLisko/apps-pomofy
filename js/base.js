@@ -1,27 +1,27 @@
-/*global jQuery, getSpotifyApi*/
+/*global getSpotifyApi*/
 
-(function($){
+(function(){
 	"use strict";
 	var sp = getSpotifyApi();
 	var models = sp.require("sp://import/scripts/api/models");
 
 	var player = models.player;
 
-	var playerButton = $(".start");
+	var playerButton = document.getElementById("start");
 	var time = 1499, tick;
 	var mins = Math.floor(time/60);
 	var secs = time%60;
-	var timer = $(".timer");
+	var timer = document.getElementById("timer");
 
 	function playOrPause() {
-		if(playerButton.text() === "Stop"){
+		if(playerButton.innerText === "Stop"){
 			player.playing = false;
 			clearInterval(tick);
-			playerButton.text("Play");
+			playerButton.innerText = "Play";
 		} else {
 			ticker();
 			player.playing = true;
-			playerButton.text("Stop");
+			playerButton.innerText = "Stop";
 		}
 	}
 
@@ -31,12 +31,12 @@
 
 	function ticker(){
 		tick = setInterval(function(){
-			timer.text(two(mins) + ":" + two(secs));
+			timer.innerText = two(mins) + ":" + two(secs);
 			if(!(secs--)){
 				if(!(mins--)){
 					clearInterval(tick);
 					player.playing = false;
-					playerButton.text("Go!");
+					playerButton.innerText = "Go!";
 					time = 1499;
 				}
 				secs = 59;
@@ -44,5 +44,5 @@
 		}, 1000);
 	}
 
-	$(".start").on("click", playOrPause);
-})(jQuery);
+	playerButton.addEventListener("click", playOrPause, false);
+})();
